@@ -1,13 +1,5 @@
 #!/bin/bash
-# BaiSH: Ultimate Professional Bash AI with Local Ollama + Command Dictionary
-# Features:
-# - Strict command-only responses
-# - Session memory
-# - Relevant command info from auto_dictionary.json
-# - Safe JSON escaping
-# - Robust syntax highlighting using awk
-# - Ctrl+C handling
-# - Multi-line input support
+# BaiSH: Bash AI with Local Ollama + Command Dictionary
 
 # SIMPLE COLORS
 RESET="\033[0m"
