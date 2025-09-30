@@ -1,0 +1,39 @@
+#!/bin/bash
+# BaiSH: Default shell wrapper with interactive prompt support
+
+# Source user's existing bashrc to preserve environment
+if [[ -f "$HOME/.bashrc" ]]; then
+    source "$HOME/.bashrc"
+fi
+
+# Function to set PS1 with graffiti/neon style
+matrix_graffiti_neon() {
+    COLORS=($BRIGHT_GREEN $BRIGHT_CYAN $BRIGHT_YELLOW $BRIGHT_MAGENTA $BRIGHT_WHITE)
+    local text="BaiSH"
+    local styled=""
+
+    for ((i=0; i<${#text}; i++)); do
+        color_index=$(( i % ${#COLORS[@]} ))
+        styled+="${COLORS[$color_index]}${text:$i:1}${RESET}"
+    done
+
+    #PS1="${BRIGHT_GREEN}▌${BRIGHT_CYAN} ${styled} ${RESET} ${BRIGHT_GREEN}▌ \w ❯ ${BRIGHT_MAGENTA}>\u ❯ ${RESET}\n${BRIGHT_YELLOW} ❯ ${RESET}"
+    # Multi-line Cyberpunk Prompt (Amplified)
+    PS1="\n\
+    ${BG_BLUE}${BRIGHT_CYAN} \u ${BG_MAGENTA}${BRIGHT_WHITE}▶ ${BG_BRIGHT_MAGENTA}${BRIGHT_WHITE} \w ${BG_CYAN}${BRIGHT_GREEN}▶ ${RESET} \n\
+    ${BG_BRIGHT_BLACK}${BRIGHT_YELLOW} ⌬ Host:${BRIGHT_WHITE}\h ${BG_BRIGHT_BLACK}${BRIGHT_GREEN}▌ ${BRIGHT_WHITE}Uptime:${BRIGHT_CYAN}\$(uptime -p) ${BG_BRIGHT_BLACK}${BRIGHT_RED}▌ ${BRIGHT_WHITE}CPU:${BRIGHT_GREEN}\$(uptime | awk -F'load average:' '{print \$2}') ${RESET} \n\
+    ${BRIGHT_MAGENTA}❯ ${RESET} "
+
+}
+
+# Set PS1 immediately
+matrix_graffiti_neon
+
+# Launch BaiSH interactively
+# if [[ -f "./bai.sh" ]]; then
+#     source ./bai.sh
+# else
+#     echo "⚠ bai.sh not found in current directory."
+# fi
+exec /usr/sbin/baish # edit this path 
+                     # or move 'baish' & 'bai.sh' to /usr/sbin/
