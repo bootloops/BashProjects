@@ -28,6 +28,22 @@
     ❯  how do i use dff to compare to files
 
 cat file1 > comparison_output && cat file2 >> comparison_output && diff -u comparison_output comparison_output
+    
+    ▌ BaiSH ▌ bootloops ▶  /home/bootloops ▶  
+     ⌬ Host: potatoe ▌ Uptime: up 6 hours, 15 minutes ▌ CPU:  0.43, 0.32, 0.38  
+    ❯  how do i install steam
+
+sudo apt-get update && sudo apt-get install steam libnss3:amd64 | echo "Steam installation complete."
+
+    ▌ BaiSH ▌ bootloops ▶  /home/bootloops ▶  
+     ⌬ Host: potatoe ▌ Uptime: up 6 hours, 15 minutes ▌ CPU:  0.43, 0.32, 0.38  
+    ❯  $echo "hello"
+Executing: echo "Hello"
+Hello
+
+    ▌ BaiSH ▌ bootloops ▶  /home/bootloops ▶  
+     ⌬ Host: potatoe ▌ Uptime: up 6 hours, 15 minutes ▌ CPU:  0.43, 0.32, 0.38  
+    ❯ 
 
 ```
 
