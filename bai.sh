@@ -1,5 +1,13 @@
 #!/bin/bash
-# BaiSH: Bash AI with Local Ollama + Command Dictionary
+# BaiSH: Ultimate Professional Bash AI with Local Ollama + Command Dictionary
+# Features:
+# - Strict command-only responses
+# - Session memory
+# - Relevant command info from auto_dictionary.json
+# - Safe JSON escaping
+# - Robust syntax highlighting using awk
+# - Ctrl+C handling
+# - Multi-line input support
 
 # SIMPLE COLORS
 RESET="\033[0m"
@@ -93,11 +101,11 @@ supports_256_colors
 
 
 # Check dictionary exists
-if [[ ! -f "$DICTIONARY_JSON" ]]; then
-    echo "⚠ Dictionary not found. Run dictionary_generator.py first."
+#if [[ ! -f "$DICTIONARY_JSON" ]]; then
+#    echo "⚠ Dictionary not found. Run dictionary_generator.py first."
     #python dictionary_generator.py
-    exit 1
-fi
+#    exit 1
+#fi
 
 
 
